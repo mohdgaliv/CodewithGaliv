@@ -4,8 +4,6 @@ const navLinks = document.getElementById('navLinks');
 
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
-  
-  // Animate hamburger
   hamburger.classList.toggle('active');
 });
 
@@ -108,26 +106,13 @@ document.querySelectorAll('.service-card, .project-card, .stat-item').forEach(el
 // Contact Form Submission
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  // Get form values
-  const formData = new FormData(contactForm);
-  
-  // Show success message (you can customize this)
-  alert('Thank you for your message! I will get back to you soon.');
-  
-  // Reset form
-  contactForm.reset();
-  
-  // In a real application, you would send this data to a server
-  // Example:
-  // fetch('your-api-endpoint', {
-  //     method: 'POST',
-  //     body: formData
-  // }).then(response => response.json())
-  //   .then(data => console.log(data));
-});
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for your message! I will get back to you soon.');
+    contactForm.reset();
+  });
+}
 
 // Typing effect for home section
 const text = "Machine Learning Developer";
@@ -135,7 +120,7 @@ const typingElement = document.querySelector('.title');
 let index = 0;
 
 function typeWriter() {
-  if (index < text.length) {
+  if (typingElement && index < text.length) {
     typingElement.textContent = text.substring(0, index + 1);
     index++;
     setTimeout(typeWriter, 100);
@@ -186,21 +171,7 @@ document.querySelectorAll('.stat-item').forEach(stat => {
   statsObserver.observe(stat);
 });
 
-// Add loading animation
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-
-// Parallax effect for home section
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const homeSection = document.querySelector('.home-section');
-  if (homeSection) {
-    homeSection.style.transform = `translateY(${scrolled * 0.5}px)`;
-  }
-});
-
-// Add cursor trail effect (optional)
+// Add cursor trail effect
 document.addEventListener('mousemove', (e) => {
   const trail = document.createElement('div');
   trail.className = 'cursor-trail';
