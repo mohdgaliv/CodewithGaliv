@@ -3,334 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="QwUQBHQgRfLpFe-MuHW3ox4ccdK1RItkK84j-9zOYB4" />
-    <title>codewithGaliv - Machine Learning</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
-
-    
+    <title>Student App</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,sans-serif;background:#F3F4F6;color:#111827}
+        
+        .screen{display:none}
+        .screen.active{display:flex;flex-direction:column;min-height:100vh}
+        
+        .container{max-width:420px;width:100%;margin:0 auto;padding:20px;display:flex;flex-direction:column;justify-content:center;min-height:100vh}
+        
+        .card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+        
+        h1{font-size:22px;font-weight:700;text-align:center;margin-bottom:4px}
+        h2{font-size:20px;font-weight:700}
+        .subtitle{color:#6B7280;font-size:13px;text-align:center;margin-bottom:20px}
+        
+        .form-group{margin-bottom:14px}
+        label{display:block;font-size:13px;font-weight:600;color:#4B5563;margin-bottom:4px}
+        input,select,textarea{width:100%;padding:11px 14px;font-size:15px;border:2px solid #E5E7EB;border-radius:10px;background:#fff}
+        input:focus{outline:none;border-color:#3B82F6}
+        
+        .btn{width:100%;padding:13px;font-size:15px;font-weight:600;border:none;border-radius:10px;cursor:pointer;text-align:center}
+        .btn-blue{background:#3B82F6;color:#fff}
+        .btn-blue:active{background:#2563EB}
+        .btn-outline{background:#fff;border:2px solid #E5E7EB;color:#374151}
+        .btn-red{background:#FEE2E2;color:#EF4444;border:1px solid #FECACA}
+        
+        .link{color:#3B82F6;text-decoration:none;font-weight:600}
+        .text-center{text-align:center}
+        .text-sm{font-size:13px}
+        .text-xs{font-size:11px}
+        .text-gray{color:#6B7280}
+        .mt-2{margin-top:8px}
+        .mt-3{margin-top:12px}
+        .mt-4{margin-top:16px}
+        .mb-3{margin-bottom:12px}
+        .mb-4{margin-bottom:16px}
+        
+        .flex{display:flex}
+        .gap-2{gap:8px}
+        .gap-3{gap:12px}
+        .items-center{align-items:center}
+        .justify-between{justify-content:space-between}
+        .flex-1{flex:1}
+        
+        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+        .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+        
+        .stat-box{background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:14px 8px;text-align:center}
+        .stat-val{font-size:20px;font-weight:700}
+        .stat-lbl{font-size:10px;color:#6B7280;margin-top:2px}
+        
+        .badge{display:inline-block;padding:3px 8px;font-size:10px;font-weight:700;border-radius:10px}
+        .badge-g{background:#DCFCE7;color:#15803D}
+        .badge-y{background:#FEF3C7;color:#B45309}
+        .badge-r{background:#FEE2E2;color:#B91C1C}
+        .badge-b{background:#DBEAFE;color:#1D4ED8}
+        
+        .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #E5E7EB;display:flex;justify-content:space-around;padding:10px 0 18px;z-index:100}
+        .nav-item{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;color:#9CA3AF;cursor:pointer}
+        .nav-active{color:#3B82F6}
+        .nav-icon{font-size:20px}
+        
+        .avatar{width:45px;height:45px;border-radius:50%;background:linear-gradient(135deg,#3B82F6,#1D4ED8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;flex-shrink:0}
+    </style>
 </head>
 <body>
-    <nav class="navbar">
+
+    <!-- ========== LOGIN SCREEN ========== -->
+    <div id="loginScreen" class="screen active">
         <div class="container">
-            <div class="logo">Galiv<span>.tech</span></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="card">
+                <h1>🎓 Student App</h1>
+                <p class="subtitle">Sign in to continue</p>
+                <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="you@email.com"></div>
+                <div class="form-group"><label>Password</label><input type="password" id="loginPass" placeholder="Enter password"></div>
+                <button class="btn btn-blue" onclick="doLogin()">Sign In</button>
+                <p class="text-center text-sm text-gray mt-3">New here? <span class="link" onclick="showScreen('registerScreen')">Create Account</span></p>
+                <p class="text-center text-xs text-gray mt-2">Any email & password works</p>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <section id="home" class="home-section">
+    <!-- ========== REGISTER SCREEN ========== -->
+    <div id="registerScreen" class="screen">
         <div class="container">
-            <div class="home-content">
-                <div class="home-text">
-                    <h1 class="greeting">Hi, I'm</h1>
-                    <h1 class="name">Mohd Galiv</h1>
-                    <h2 class="title">Machine Learning Developer</h2>
-                    <p class="description">Passionate about creating intelligent solutions through Machine Learning and Web Development. Transforming data into insights and ideas into reality.</p>
-                    <div class="home-buttons">
-                        <a href="#contact" class="btn btn-primary">Hire Me</a>
-                        <a href="#projects" class="btn btn-secondary">View Work</a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/mohdgaliv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/mohd-galiv-gazi-457674370" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/galiv.tech101" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="card">
+                <h1>Create Account</h1>
+                <p class="subtitle">Start your learning journey</p>
+                
+                <!-- Step 1 -->
+                <div id="regStep1">
+                    <div class="form-group"><label>Full Name</label><input type="text" id="regName" placeholder="John Doe"></div>
+                    <div class="form-group"><label>Email</label><input type="email" id="regEmail" placeholder="you@email.com"></div>
+                    <div class="form-group"><label>Phone (Optional)</label><input type="tel" id="regPhone" placeholder="+91 9876543210"></div>
+                    <button class="btn btn-blue" onclick="regNext()">Continue →</button>
+                </div>
+                
+                <!-- Step 2 -->
+                <div id="regStep2" style="display:none">
+                    <div class="form-group"><label>Password</label><input type="password" id="regPass" placeholder="Min 6 characters"></div>
+                    <div class="form-group"><label>Confirm Password</label><input type="password" id="regConfirm" placeholder="Re-enter password"></div>
+                    <div class="flex gap-2">
+                        <button class="btn btn-outline flex-1" onclick="regBack()">← Back</button>
+                        <button class="btn btn-blue flex-1" onclick="doRegister()">Create Account</button>
                     </div>
                 </div>
-                <div class="home-image">
-                    <div class="image-wrapper">
-                        <img src="profile.jpg" alt="Mohd Galiv">
-                    </div>
-                </div>
+                
+                <p class="text-center text-sm text-gray mt-3">Have account? <span class="link" onclick="showScreen('loginScreen')">Sign in</span></p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">About <span>Me</span></h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="profile.jpg" alt="Mohd Galiv">
-                </div>
-                <div class="about-text">
-                    <h3>Machine Learning Enthusiast & Web Developer</h3>
-                    <p>Hello! I'm Mohd Galiv, a dedicated Machine Learning developer with a passion for creating intelligent and efficient solutions. I specialize in building machine learning models and developing modern web applications.</p>
-                    <p>With expertise in Python, HTML, CSS, and JavaScript, I bridge the gap between data science and web development to create impactful digital experiences. My goal is to leverage technology to solve real-world problems and make a positive impact.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h4>10+</h4>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>5+</h4>
-                            <p>Technologies</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>100%</h4>
-                            <p>Client Satisfaction</p>
-                        </div>
-                    </div>
-                    <div class="resume-buttons">
-                        <a href="resume.pdf.pdf" target="_blank" class="btn btn-primary">resume CV <i class="fas fa-eye"></i></a>
-                        <a href="resume.pdf.pdf" class="btn btn-secondary" download>resume <i class="fas fa-download"></i></a>
-                    </div>
+    <!-- ========== DASHBOARD SCREEN ========== -->
+    <div id="dashboardScreen" class="screen">
+        <div style="padding:16px;padding-bottom:85px;background:#F3F4F6;flex:1">
+            <div class="flex items-center gap-3 mb-4 card" style="padding:14px">
+                <div class="avatar">👤</div>
+                <div>
+                    <p class="text-xs text-gray">Welcome 👋</p>
+                    <h2 style="font-size:17px" id="dashName">Student</h2>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2 class="section-title">My <span>Skills</span></h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                    <p>90%</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Machine Learning</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                    <p>85%</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3>HTML</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                    <p>95%</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-css3-alt"></i>
-                    </div>
-                    <h3>CSS</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                    <p>90%</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-js"></i>
-                    </div>
-                    <h3>JavaScript</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                    <p>85%</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Data Science</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                    <p>80%</p>
-                </div>
+            
+            <div class="grid-2 mb-4">
+                <div class="stat-box"><div class="stat-val">6</div><div class="stat-lbl">📚 Subjects</div></div>
+                <div class="stat-box"><div class="stat-val" style="color:#22C55E">85%</div><div class="stat-lbl">✅ Attendance</div></div>
+                <div class="stat-box"><div class="stat-val" style="color:#F59E0B">4</div><div class="stat-lbl">📝 Pending</div></div>
+                <div class="stat-box"><div class="stat-val">3.8</div><div class="stat-lbl">⭐ GPA</div></div>
             </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title">My <span>Projects</span></h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="p1.jpg" alt="Image Classification Model">
-                        <div class="project-overlay">
-                            <a href="https://github.com/mohdgaliv" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Image Classification Model</h3>
-                        <p>Deep learning model for image classification using TensorFlow and Keras</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>ML</span>
-                            <span>TensorFlow</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="p2.jpg" alt="Portfolio Website">
-                        <div class="project-overlay">
-                            <a href="https://github.com/mohdgaliv" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>Modern and responsive portfolio website with interactive elements</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="p4.jpg" alt="Data Analysis Dashboard">
-                        <div class="project-overlay">
-                            <a href="https://github.com/mohdgaliv" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Data Analysis Dashboard</h3>
-                        <p>Interactive dashboard for data visualization and analysis</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>Plotly</span>
-                        </div>
-                    </div>
-                </div>
+            
+            <h3 style="font-weight:600;margin-bottom:8px">⚡ Quick Actions</h3>
+            <div class="grid-4 mb-4">
+                <div class="stat-box" onclick="alert('Quiz page')"><div style="font-size:22px">🎯</div><div class="stat-lbl">Quiz</div></div>
+                <div class="stat-box" onclick="alert('Attendance page')"><div style="font-size:22px">📊</div><div class="stat-lbl">Attendance</div></div>
+                <div class="stat-box" onclick="alert('Subjects page')"><div style="font-size:22px">📚</div><div class="stat-lbl">Subjects</div></div>
+                <div class="stat-box" onclick="alert('AI Assistant')"><div style="font-size:22px">🤖</div><div class="stat-lbl">AI Help</div></div>
             </div>
+            
+            <button class="btn btn-red mt-4" onclick="doLogout()">🚪 Logout</button>
         </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title">My <span>Services</span></h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Machine Learning</h3>
-                    <p>Building intelligent ML models for prediction, classification, and data analysis to solve complex problems.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Creating responsive and modern websites using latest web technologies and best practices.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Data Analysis</h3>
-                    <p>Extracting valuable insights from data through comprehensive analysis and visualization.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Responsive Design</h3>
-                    <p>Designing websites that work seamlessly across all devices and screen sizes.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>AI Solutions</h3>
-                    <p>Implementing artificial intelligence solutions to automate and optimize business processes.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Custom Solutions</h3>
-                    <p>Developing tailored solutions to meet specific business requirements and challenges.</p>
-                </div>
-            </div>
+        
+        <div class="bottom-nav">
+            <button class="nav-item nav-active"><span class="nav-icon">🏠</span>Home</button>
+            <button class="nav-item"><span class="nav-icon">📚</span>Subjects</button>
+            <button class="nav-item"><span class="nav-icon">🎯</span>Quiz</button>
+            <button class="nav-item"><span class="nav-icon">📖</span>Notes</button>
+            <button class="nav-item"><span class="nav-icon">👤</span>Profile</button>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In <span>Touch</span></h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>mohdgaliv@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 7818899093</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Sambhal, UP, India</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Galiv.tech - All Rights Reserved</p>
-            <div class="footer-social">
-                <a href="https://github.com/mohdgaliv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohd-galiv-gazi-457674370" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/galiv.tech101" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+        // Show screen
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(function(el) { el.classList.remove('active'); });
+            document.getElementById(id).classList.add('active');
+        }
+        
+        // Login
+        function doLogin() {
+            var email = document.getElementById('loginEmail').value.trim();
+            var pass = document.getElementById('loginPass').value;
+            
+            if (!email || !pass) { alert('Please fill all fields'); return; }
+            
+            var user = { name: email.split('@')[0], email: email };
+            localStorage.setItem('student_user', JSON.stringify(user));
+            document.getElementById('dashName').textContent = user.name;
+            showScreen('dashboardScreen');
+        }
+        
+        // Register - Step 1 to Step 2
+        function regNext() {
+            var name = document.getElementById('regName').value.trim();
+            var email = document.getElementById('regEmail').value.trim();
+            
+            if (!name) { alert('Please enter your name'); return; }
+            if (!email || email.indexOf('@') === -1) { alert('Please enter valid email'); return; }
+            
+            document.getElementById('regStep1').style.display = 'none';
+            document.getElementById('regStep2').style.display = 'block';
+        }
+        
+        // Register - Back to Step 1
+        function regBack() {
+            document.getElementById('regStep2').style.display = 'none';
+            document.getElementById('regStep1').style.display = 'block';
+        }
+        
+        // Register - Submit
+        function doRegister() {
+            var name = document.getElementById('regName').value.trim();
+            var email = document.getElementById('regEmail').value.trim();
+            var phone = document.getElementById('regPhone').value.trim();
+            var pass = document.getElementById('regPass').value;
+            var confirm = document.getElementById('regConfirm').value;
+            
+            if (pass.length < 6) { alert('Password must be at least 6 characters'); return; }
+            if (pass !== confirm) { alert('Passwords do not match'); return; }
+            
+            var user = { name: name, email: email, phone: phone };
+            localStorage.setItem('student_user', JSON.stringify(user));
+            document.getElementById('dashName').textContent = name;
+            showScreen('dashboardScreen');
+        }
+        
+        // Logout
+        function doLogout() {
+            localStorage.removeItem('student_user');
+            showScreen('loginScreen');
+        }
+        
+        // Check if already logged in
+        (function() {
+            var saved = localStorage.getItem('student_user');
+            if (saved) {
+                try {
+                    var user = JSON.parse(saved);
+                    document.getElementById('dashName').textContent = user.name || 'Student';
+                    showScreen('dashboardScreen');
+                } catch(e) {
+                    showScreen('loginScreen');
+                }
+            }
+        })();
+    </script>
 </body>
     </html>
-    
