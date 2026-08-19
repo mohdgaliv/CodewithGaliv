@@ -1,0 +1,250 @@
+/* ============================================
+   learn.css
+   Shared styles for the Python Course & DSA
+   learning platform pages (python-course/, dsa/).
+   Depends on CSS variables defined in ../style.css
+   Load order on each page: style.css THEN learn.css
+   ============================================ */
+
+/* Page hero (top banner under navbar) */
+.learn-hero {
+    padding: 140px 0 60px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    text-align: center;
+}
+
+.learn-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.learn-hero h1 span {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.learn-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 90px 0 0;
+}
+
+.breadcrumb .container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Section wrapper reused for module groups */
+.learn-section {
+    padding: 70px 0;
+}
+
+.learn-section:nth-child(even) {
+    background: var(--bg-light);
+}
+
+.learn-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.level-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--gradient);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Module / topic grid */
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.module-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 1.75rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.module-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.module-card .module-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--gradient);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.module-card h3 {
+    color: var(--text-dark);
+    font-size: 1.15rem;
+}
+
+.module-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.module-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.module-status.coming-soon {
+    background: #fff4e5;
+    color: #b26a00;
+}
+
+.module-status.available {
+    background: #e6f9ee;
+    color: #1a7f4e;
+}
+
+/* Overall progress placeholder (visual scaffold only, wired up in a later phase) */
+.progress-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.progress-stat {
+    background: var(--white);
+    padding: 1.25rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    min-width: 140px;
+}
+
+.progress-stat h4 {
+    font-size: 1.8rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.25rem;
+}
+
+.progress-stat p {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .learn-hero h1 { font-size: 2rem; }
+    .learn-hero { padding: 120px 0 40px; }
+    .learn-section-title { font-size: 1.4rem; flex-wrap: wrap; }
+}
+
+/* Certificate scaffold (locked state, no generation logic yet) */
+.certificate-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.certificate-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.certificate-card h3 {
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+}
+
+.certificate-card > p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.flow-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.flow-step {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.certificate-disclaimer {
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}

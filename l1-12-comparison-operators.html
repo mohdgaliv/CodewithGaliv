@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Operators | Level 1 - Python Course | CodewithGaliv</title>
+    <meta name="description" content="Python ke comparison operators — ==, !=, >, <, >=, <= — jo boolean return karte hain, examples ke saath.">
+    <link rel="canonical" href="https://mohdgaliv.github.io/CodewithGaliv/python-course/level-1/l1-12-comparison-operators.html">
+
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../assets/learn.css">
+    <link rel="stylesheet" href="../../assets/lesson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="manifest" href="../../site.webmanifest">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><a href="../../index.html" style="text-decoration:none; color:inherit;">Galiv<span>.tech</span></a></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html" class="nav-link">Python Course</a></li>
+                <li><a href="../../dsa/index.html" class="nav-link">DSA Practice</a></li>
+                <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">Home</a> <span>/</span>
+            <a href="../index.html">Python Course</a> <span>/</span>
+            <span>Lesson 12: Comparison Operators</span>
+        </div>
+    </div>
+
+    <header class="lesson-hero" data-lesson-id="l1-12-comparison-operators" data-level="level1">
+        <div class="container">
+            <span class="lesson-number">Level 1 &middot; Lesson 12 of 15</span>
+            <h1>Comparison Operators</h1>
+            <div class="step-nav">
+                <a href="#learn"><i class="fas fa-book"></i> Learn</a>
+                <a href="#practice"><i class="fas fa-flask"></i> Practice</a>
+                <a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a>
+                <a href="#challenge"><i class="fas fa-trophy"></i> Challenge</a>
+                <a href="#complete"><i class="fas fa-check-circle"></i> Complete</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="learn" class="lesson-block">
+        <div class="container">
+            <h2><i class="fas fa-book"></i> Learn</h2>
+
+            <div class="concept-box">
+                <strong>Objective:</strong> Comparison operators (==, !=, >, <, >=, <=) seekhna, jo hamesha bool return karte hain.
+            </div>
+
+            <p>Comparison operators do values compare karte hain aur result hamesha <strong>True</strong> ya <strong>False</strong> hota hai. In operators ka use conditions (if statements) me bahut hoga, jo agle level me seekhenge.</p>
+
+            <h3 style="color: var(--text-dark); margin: 1.5rem 0 0.75rem;">Important Concepts</h3>
+            <ul>
+                                <li><code>==</code> equal to, <code>!=</code> not equal to.</li>
+                <li><code>&gt;</code> greater than, <code>&lt;</code> less than.</li>
+                <li><code>&gt;=</code> greater or equal, <code>&lt;=</code> less or equal.</li>
+                <li>Result hamesha <code>bool</code> (True/False) hota hai.</li>
+            </ul>
+
+            <h3 style="color: var(--text-dark); margin: 1.5rem 0 0.75rem;">Syntax</h3>
+            <div class="example-block">
+                <span class="code-label">Syntax</span>
+                <pre class="code-block">a == b, a != b, a > b, a < b, a >= b, a <= b</pre>
+            </div>
+
+            <div class="mistake-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> Common Mistakes</h4>
+                                <p><code>=</code> (assignment) aur <code>==</code> (comparison) me confuse hona.</p>
+                <p>Different types compare karna unexpected result de sakta hai — jaise <code>"5" == 5</code> gives <strong>False</strong>, kyunki types alag hain.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="practice" class="lesson-block">
+        <div class="container">
+            <h2><i class="fas fa-flask"></i> Practice</h2>
+                        <div class="example-block">
+                <span class="code-label">Python Code</span>
+                <pre class="code-block">print(5 == 5)</pre>
+                <span class="code-label">Expected Output</span>
+                <div class="output-block">True</div>
+            </div>
+            <div class="example-block">
+                <span class="code-label">Python Code</span>
+                <pre class="code-block">print(5 != 3)</pre>
+                <span class="code-label">Expected Output</span>
+                <div class="output-block">True</div>
+            </div>
+            <div class="example-block">
+                <span class="code-label">Python Code</span>
+                <pre class="code-block">print(3 &lt; 5)</pre>
+                <span class="code-label">Expected Output</span>
+                <div class="output-block">True</div>
+            </div>
+            <div class="example-block">
+                <span class="code-label">Python Code</span>
+                <pre class="code-block">print(10 &gt;= 15)</pre>
+                <span class="code-label">Expected Output</span>
+                <div class="output-block">False</div>
+            </div>
+
+            <h3 style="color: var(--text-dark); margin: 1.5rem 0 0.75rem;">Quick Recap</h3>
+            <ul class="recap-list">
+                                <li><i class="fas fa-check"></i> Comparison operators hamesha bool return karte hain.</li>
+                <li><i class="fas fa-check"></i> == comparison hai, = assignment hai — confuse mat karo.</li>
+                <li><i class="fas fa-check"></i> Different types compare karne se False mil sakta hai.</li>
+            </ul>
+
+            <h3 style="color: var(--text-dark); margin: 1.5rem 0 0.75rem;">Practice Questions</h3>
+            <ol class="practice-list">
+                                <li>Do numbers compare karo == se aur result print karo.</li>
+                <li>Ek number ko dusre se > aur < dono se compare karo.</li>
+                <li>String "5" aur int 5 ko == se compare karke result predict karo, phir verify karo.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="quiz" class="lesson-block">
+        <div class="container">
+            <h2><i class="fas fa-question-circle"></i> Quiz</h2>
+            <p>Sahi option choose karo — jab tak sahi jawab nahi milega, retry kar sakte ho.</p>
+                        <div class="quiz-question">
+                <p class="quiz-q-text">1. Do values equal hain ya nahi check karne ke liye kaunsa operator use hota hai?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="true">==</button>
+                    <button class="quiz-option" data-correct="false">=</button>
+                    <button class="quiz-option" data-correct="false">===</button>
+                    <button class="quiz-option" data-correct="false">eq()</button>
+                </div>
+                <p class="quiz-feedback"></p>
+            </div>
+            <div class="quiz-question">
+                <p class="quiz-q-text">2. `"5" == 5` ka result kya hoga?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="true">False</button>
+                    <button class="quiz-option" data-correct="false">True</button>
+                    <button class="quiz-option" data-correct="false">Error</button>
+                    <button class="quiz-option" data-correct="false">None</button>
+                </div>
+                <p class="quiz-feedback"></p>
+            </div>
+            <div class="quiz-question">
+                <p class="quiz-q-text">3. `10 >= 10` ka result?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="true">True</button>
+                    <button class="quiz-option" data-correct="false">False</button>
+                    <button class="quiz-option" data-correct="false">Error</button>
+                    <button class="quiz-option" data-correct="false">10</button>
+                </div>
+                <p class="quiz-feedback"></p>
+            </div>
+            <p id="quizScoreSummary" class="quiz-score-summary">Score: 0 / 3 correct</p>
+        </div>
+    </section>
+
+    <section id="challenge" class="lesson-block">
+        <div class="container">
+            <h2><i class="fas fa-trophy"></i> Challenge</h2>
+            <div class="challenge-box">
+                <p><strong>Task:</strong> <code>print(10 == 20)</code>, <code>print(10 &lt; 20)</code>, aur <code>print(10 &gt; 20)</code> — isi exact order me likho.</p>
+
+                <div class="pyodide-challenge">
+                    <div class="editor-loader" id="editorLoader">
+                        <button id="loadEditorBtn" class="btn btn-secondary">
+                            <i class="fas fa-play-circle"></i> Load Python Editor
+                        </button>
+                        <p class="editor-hint">Tap karne par Python runtime load hoga (ek baar, ~10 MB). Sab kuch tumhare browser ke andar chalega — koi server ko code nahi jaata.</p>
+                    </div>
+
+                    <div class="code-editor-wrap" id="editorWrap" style="display:none;">
+                        <div class="editor-toolbar">
+                            <button id="runCodeBtn" class="btn btn-primary btn-sm"><i class="fas fa-play"></i> Run Code</button>
+                            <button id="clearCodeBtn" class="btn btn-secondary btn-sm"><i class="fas fa-eraser"></i> Clear</button>
+                            <button id="resetCodeBtn" class="btn btn-secondary btn-sm"><i class="fas fa-undo"></i> Reset</button>
+                        </div>
+                        <textarea id="codeEditor" class="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+
+                        <div class="output-panel">
+                            <span class="code-label">Output</span>
+                            <pre id="codeOutput" class="output-block editor-output"></pre>
+                        </div>
+                        <div class="error-panel" id="errorPanel" style="display:none;">
+                            <span class="code-label" style="color:#d63333;">Error</span>
+                            <pre id="codeError" class="output-block editor-error"></pre>
+                        </div>
+                        <p id="challengeResultMsg" class="challenge-result"></p>
+                    </div>
+
+                    <script type="application/json" id="challengeConfig">{"starterCode": "# 3 print statements likho: ==, <, >\n", "checks": [{"type": "exact", "value": "False\nTrue\nFalse", "hint": "Order: 10==20, 10<20, 10>20."}]}</script>
+                </div>
+
+                <p id="challengeStatus" class="complete-status"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="complete" class="lesson-block">
+        <div class="container">
+            <div class="complete-box">
+                <h2 style="justify-content:center;"><i class="fas fa-check-circle"></i> Complete</h2>
+                <p>Quiz sahi karo aur challenge attempt karo — tab ye lesson complete mark hoga.</p>
+                <button id="markCompleteBtn" class="btn btn-primary" disabled>Mark Lesson Complete</button>
+                <p id="completeStatus" class="complete-status"></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="lesson-pager">
+        <div class="container">
+            <a href="l1-11-arithmetic-operators.html">&larr; Previous: Arithmetic Operators</a>
+            <a href="l1-13-logical-operators.html">Next: Logical Operators &rarr;</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Galiv.tech - All Rights Reserved</p>
+            <div class="footer-social">
+                <a href="https://github.com/mohdgaliv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mohd-galiv-gazi-457674370" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/galiv.tech101" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../main.js"></script>
+    <script src="../../assets/progress-schema.js"></script>
+    <script src="../../assets/lesson-engine.js"></script>
+    <script src="../../assets/challenge-engine.js"></script>
+</body>
+</html>
